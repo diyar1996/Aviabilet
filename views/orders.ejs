@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Search</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="/css/common.css"/>
+		<link rel="stylesheet" href="/css/cart.css"/>
+	</head>
+	<body>
+		<%- include("navbar.ejs") %>
+
+		<h2 class="cart-header">Заказы</h2>
+		<%if(!result || result.length === 0){%>
+			<span class="cart-header">Ничего не найдено</span>
+		<%}else{ %>
+			<ul class="cart-list">
+			<%for(var i=0; i < result.length; i++) {
+				var data = result[i]; %>
+				<li>
+					<form method="POST" action="/buy">
+						<span>Откуда: <%=data.ticket.from%>   Куда: <%=data.ticket.to%></span><br>
+						<span>Авиакомпания: <%=data.ticket.seller%></span><br>
+						<span>Цена: <%=data.ticket.price%></span><br>
+						<span>Багаж: <%=(data.ticket.baggage==="nob"? "Без багажа" : data.ticket.baggage==="handb"? "Ручная кладь" : "Багаж и ручная кладь")%></span><br>
+					</form>
+				</li>
+			
+			<%}%>
+			</ul>
+		<%}%>
+	</body>
+</html>

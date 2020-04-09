@@ -1,0 +1,20 @@
+<div class="navbar">
+	<a href="/" class="navbar-brand">
+		Aviabilet
+	</a>
+	<nav>
+		<a href="/search">
+			Поиск
+		</a>
+	</nav>
+	<div class="navbar-usermenu">
+		<% if(user) { %>
+			<a href="/cart">Корзина</a>
+			<a href="/orders">Заказы</a>
+			<a href="/logout">Выход</a>
+		<% } else { %>
+			<a href="/login">Вход</a>
+			<a href="/register">Регистрация</a>
+		<% } %>
+	</div>
+</div>

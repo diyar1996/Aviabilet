@@ -1,0 +1,12 @@
+.cart-header {
+	margin-left: auto;
+	margin-right: auto;
+	width: fit-content;
+	display: block;
+}
+
+.cart-list {
+	margin-left: auto;
+	margin-right: auto;
+	width: fit-content;
+}

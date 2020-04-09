@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Register</title>
+		<meta charset="utf-8"/>
+
+		<link rel="stylesheet" href="/css/common.css"/>
+		<link rel="stylesheet" href="/css/auth.css"/>
+		<script src="https://kit.fontawesome.com/e27d6b484b.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<form method="POST" class="auth-form">
+			<h1 class="auth-header">Регистрация</h1>
+			<div class="auth-body">
+				<label class="auth-label">Username</label>
+				<input name="username" pattern="^[a-zA-Z0-9_-]{3,15}$" class="auth-input"/>
+				<label class="auth-label">Password</label>
+				<input type="password" patter="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$" name="password" class="auth-input"/>
+				<input class="auth-submit" type="submit"/>
+			</div>
+			<div class="auth-footer">
+				Уже есть аккаунт? <a href="/login">Вход</a>			
+			</div>
+		</form>
+	</body>
+</html>

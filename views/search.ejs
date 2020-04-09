@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Search</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="/css/common.css"/>
+		<link rel="stylesheet" href="/css/search.css"/>
+	</head>
+	<body>
+		<%- include("navbar.ejs") %>
+
+		
+		<form method="POST" action="/search" class="search-form">
+			<div class="search-body">
+				<h1>Поиск авиабилетов</h1>
+				<div>
+					<div class="search-block">
+						<label>Откуда</label>
+						<input name="from" value=<%=(filter.from || "") %>>
+					</div>
+					<div class="search-block">
+						<label>Куда</label>
+						<input name="to" value=<%=(filter.to || "") %>>
+					</div>
+					<div class="search-block">
+						<label>Дата вылета</label>
+						<input name="date" type="date" value=<%=(filter.date) || "" %>>
+					</div>				
+				</div>
+			</div>
+			<div class="middle">
+				<div class="filter">
+					<h2>Фильтр</h2>
+					<div class="filter-box">
+						<div>
+						<h3>Багаж</h3>
+							<p><input name="baggage" type="radio" value="" <% if(!filter.baggage){ %>checked<% } %>> Не выбрано</p>
+							<p><input name="baggage" type="radio" value="nob" <% if(filter.baggage==="nob"){ %>checked<% } %>> Без багажа</p>
+							<p><input name="baggage" type="radio" value="handb" <% if(filter.baggage==="handb"){ %>checked<% } %>> Ручная кладь</p>
+							<p><input name="baggage" type="radio" value="fullb" <% if(filter.baggage==="fullb"){ %>checked<% } %>> Багаж и ручная кладь</p>
+						</div>
+						<div>						
+						<h3>Авиакомпания</h3>
+							<p><input name="S7" type="checkbox" value="S7" <% if(filter.S7){ %>checked<% } %>> S7 Airlines</p>
+							<p><input name="UT" type="checkbox" value="UT" <% if(filter.UT){ %>checked<% } %>> Utair</p>
+							<p><input name="AF" type="checkbox" value="AF" <% if(filter.AF){ %>checked<% } %>> Aeroflot</p>
+							<p><input name="PB" type="checkbox" value="PB" <% if(filter.PB){ %>checked<% } %>> Pobeda</p>
+							<p><input name="RS" type="checkbox" value="RS" <% if(filter.RS){ %>checked<% } %>> Rossiya</p>
+						</div>		
+					</div>			
+					<input type="submit" value="Найти" class="submit"/>	
+				</div>
+				
+			</div>
+			
+		</form>
+			<div class="result-box">
+					<h2>Результат</h2>
+					<%if(!result || result.length === 0){%>
+						<span>Ничего не найдено</span>
+					<%}else{ %>
+						<ul>
+						<%for(var i=0; i < result.length; i++) {
+							var data = result[i]; %>
+							<li>
+								<form method="POST" action="/cart/add" class="result-card">
+									<span>Откуда: <%=data.ticket.from%>   Куда: <%=data.ticket.to%></span><br>
+									<span>Авиакомпания: <%=data.ticket.seller%></span><br>
+									<span>Цена: <%=data.ticket.price%></span><br>
+									<span>Багаж: <%=(data.ticket.baggage==="nob"? "Без багажа" : data.ticket.baggage==="handb"? "Ручная кладь" : "Багаж и ручная кладь")%></span><br>
+									<% if(user) { %>						
+									<input type="submit" value="Добавить в корзину">	
+									<% } %>					
+									<input name="ticket_id" value=<%=data.id%> class="hidden"><br>	
+								</form>
+							</li>
+						<%}%>
+					</ul>
+				<%}%>
+				</div>
+		
+	</body>
+</html>

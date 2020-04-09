@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Admin</title>
+		<meta charset="utf-8"/>
+	</head>
+	<body>
+		<h1>Добавление билетов</h1>
+		<form method="POST" action="/admin">
+			<div>
+				<label>Откуда</label>
+				<input name="from"/>
+			<div>
+			<div>
+				<label>Куда</label>
+				<input name="to"/>
+			<div>
+			<div>
+				<label>Дата вылета</label>
+				<input name="date" type="date"/>
+			<div>
+			<div>
+				<label>Цена</label>
+				<input name="price" type="number"/>
+			<div>
+			<h2>Авиакомпания</h2>
+				<p><input name="seller" type="radio" value="S7"> S7 Airlines</p>
+				<p><input name="seller" type="radio" value="UT"> Utair</p>
+				<p><input name="seller" type="radio" value="AF"> Aeroflot</p>
+				<p><input name="seller" type="radio" value="PB"> Pobeda</p>
+				<p><input name="seller" type="radio" value="RS"> Rossiya</p>
+			<h2>Багаж</h2>
+				<p><input name="baggage" type="radio" value="nob"> Без багажа</p>
+				<p><input name="baggage" type="radio" value="handb"> Ручная кладь</p>
+				<p><input name="baggage" type="radio" value="fullb"> Багаж и ручная кладь</p>
+			<h2>Пересадки</h2>
+				<p><input name="transfer" type="radio" value="without"> Без пересадок</p>
+				<p><input name="transfer" type="radio" value="with"> С пересадками</p>
+			<input type="submit" value="Добавить">
+		</form>
+	</body>
+</html>

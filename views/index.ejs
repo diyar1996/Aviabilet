@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Home</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="/css/common.css"/>
+		<link rel="stylesheet" href="/css/index.css"/>
+	</head>
+	<body>
+		<%- include("navbar.ejs") %>
+		
+		<form method="POST" action="/search" class="search-form">
+			<h1>Поиск авиабилетов</h1>
+			<div class="container">
+				<div class="search-block">
+					<label>Откуда</label>
+					<input name="from"/>
+				</div>
+				<div class="search-block">
+					<label>Куда</label>
+					<input name="to"/>
+				</div>
+				<div class="search-block">
+					<label>Дата вылета</label>
+					<input name="date" type="date"/>
+				</div>
+			</div>
+			<input type="submit" value="Найти" />
+		</form>
+
+	</body>
+</html>

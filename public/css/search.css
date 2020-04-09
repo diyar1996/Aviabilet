@@ -1,0 +1,120 @@
+.search-form {
+	margin-left: auto;
+	margin-right: auto;
+	width: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.filter {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1rem;
+	background-color: #fff;
+	border-radius: 10px;
+	width: 487px;
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+	height: fit-content;
+}
+
+.filter-box {
+	display: flex;
+	flex-direction: row;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.filter > p {
+	margin-top: 5px;
+	margin-bottom: 0;
+}
+
+.filter > h2 {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0;
+}
+
+.search-body {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1rem;
+	background-color: #fff;
+	border-radius: 10px;
+	width: fit-content;
+	padding: 15px;
+}
+
+.search-block {
+	display: flex;
+	flex-direction: column;
+	width: auto;
+	margin-left: 4px;
+	margin-right: 4px;
+}
+
+.search-block > label {
+	width: fit-content;
+	margin-left: 4px;
+}
+
+.search-block > input {
+	width: 150px;
+	height: 32px;
+}
+
+.search-body > h1 {
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.search-body > div {
+	display: flex;
+	flex-direction: row;
+}
+
+.submit {
+	width: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1rem;
+}
+
+
+.middle {
+	display: flex;
+	flex-direction: row;
+}
+
+.result-box {
+	margin-right: auto;
+	width: 400px;
+	display: flex;
+	flex-direction: column;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.result-box > h2 {
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.result-box > span {
+	width: 100%;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+
+
+
+
+

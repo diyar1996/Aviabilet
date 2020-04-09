@@ -1,0 +1,68 @@
+html {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	position: absolute;
+}
+
+body {
+	top: 0;
+	display: block;
+	background-color: #edeef0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+.hidden {
+	display: none;
+}
+
+.navbar {
+	background-color: #404044;
+	color: #888888;
+	height: 52px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+.navbar-brand {
+	position: relative;
+	display: block;
+	color: #aaaaaa;
+	font-size: 32px;
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: 2rem;
+	text-decoration: none;
+}
+
+.navbar > nav {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 100%;
+}
+
+.navbar > nav > a {
+	color: #888;
+	text-decoration: none;
+	margin-left: 2rem;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.navbar-usermenu {
+	display: flex;
+	flex: row;
+	margin-right: 2rem;
+	height: 100%;
+	width: auto;
+}
+
+.navbar-usermenu > a {
+	color: #888;
+	text-decoration: none;
+	margin-left: 5px;
+	margin-top: auto;
+	margin-bottom: auto;
+}

@@ -1,0 +1,8 @@
+{
+	"mongodb": {
+		"url": "mongodb+srv://bilet:aviabilet@aviabilet-qff32.mongodb.net/test?retryWrites=true&w=majority"
+	},
+	"redis": {
+		"url": ""
+	}
+}
