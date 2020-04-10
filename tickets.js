@@ -33,7 +33,7 @@ module.exports.getTicketList = (ticket_ids) => {
 					if(err) reject(err);	
 					res = JSON.parse(res);				
 					console.log(res);				
-					out.push(res);
+					out.push(res.ticket);
 					j++;f();
 				});
 			}				
@@ -81,7 +81,7 @@ module.exports.get = (filter) => {
 				if(j < d1.length){
 					await global.redis_client.get(d1[j], (err, res)=>{					
 						if(err) { throw err; }	
-						out.push({ id: d[j].get(0).properties.id, ticket: JSON.parse(res)});
+						out.push({ id: d[j].get(0).properties.id, ticket: JSON.parse(res).ticket});
 						j++;f();
 					});
 				}				
@@ -158,7 +158,6 @@ module.exports.add = async (ticket) => {
 				CREATE (a)-[r:Tets]->(b)\n \
 				RETURN r', 
 			{ transfer: ticket.transfer, id: ticket_id, });
-			
 			global.redis_client.set(ticket_id, JSON.stringify({ ticket: ticket, id: ticket_id }), (err, res)=>{ if(err) throw err; });
 		}
 		catch(err){

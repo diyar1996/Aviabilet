@@ -78,9 +78,9 @@ module.exports.remove = (token, id) => {
 		.then((item) => {
 			if(!item) return resolve();
 			
-			global.influx_client.queryRaw("updare cart_item ")
-			.then(resolve)
-			.catch(rejevt);			
+			//global.influx_client.queryRaw("")
+			//.then(resolve)
+			//.catch(reject);			
 		})
 		.catch((err) => {
 			return reject(err);
@@ -123,7 +123,6 @@ module.exports.getOrders = (token) => {
 		global.influx_client.query('cart_item')
 		.where('token', token)
 		.where('purchased', true)
-		.where('existing', true)
 		.set({ format: "json" })
 		.then((data)=> {
 			resolve(data.cart_item || []);
