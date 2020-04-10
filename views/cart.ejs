@@ -21,6 +21,7 @@
 						<span>Откуда: <%=data.ticket.from%>   Куда: <%=data.ticket.to%></span><br>
 						<span>Авиакомпания: <%=data.ticket.seller%></span><br>
 						<span>Цена: <%=data.ticket.price%></span><br>
+						<span>Дата: <%=data.ticket.date %> </span><br>
 						<span>Багаж: <%=(data.ticket.baggage==="nob"? "Без багажа" : data.ticket.baggage==="handb"? "Ручная кладь" : "Багаж и ручная кладь")%></span><br>
 						<% if(user) { %>						
 							<input type="submit" value="Заказать">	

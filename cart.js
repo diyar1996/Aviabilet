@@ -80,7 +80,8 @@ module.exports.remove = (token, id) => {
 			
 			//global.influx_client.queryRaw("")
 			//.then(resolve)
-			//.catch(reject);			
+			//.catch(reject);	
+			resolve();
 		})
 		.catch((err) => {
 			return reject(err);
